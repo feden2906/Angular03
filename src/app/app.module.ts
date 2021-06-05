@@ -1,14 +1,25 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {HttpClientModule} from "@angular/common/http";
+import {RouterModule} from "@angular/router";
 
 import { AppComponent } from './app.component';
+import {HomeComponent} from "./components/home/home.component";
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    RouterModule.forRoot([
+      {path: 'home', component:HomeComponent},
+      {path: 'users', loadChildren: () => import('./modules/user/user.module').then(m=>m.UserModule)},
+     ])
   ],
   providers: [],
   bootstrap: [AppComponent]
