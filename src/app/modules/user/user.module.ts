@@ -5,7 +5,7 @@ import { UserRoutingModule } from './user-routing.module';
 
 import { UsersComponent } from './components/users/users.component';
 import {UserService} from "./services/user.service";
-import { UserComponent } from './components/user/user.component';
+import { UserComponent } from './components/users/user/user.component';
 
 
 @NgModule({
